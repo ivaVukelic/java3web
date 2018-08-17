@@ -1,0 +1,164 @@
+/* 
+    Created on : Aug 16, 2018, 12:25:50 PM
+    Author     : Misfortune
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Bellefair|Fauna+One');
+
+html,
+body
+{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+    font-family: 'Bellefair';
+    background-color: brown;
+}
+
+.container
+{
+    height: 100vh;
+    width: 100vw;
+
+    overflow-y: auto;
+    box-sizing: border-box;
+    
+    margin: 0;
+    padding: 0;
+
+    background-color: #fff;
+    color: #000;
+    
+    display: block;
+}
+
+.heading 
+{
+    width: 100vw;
+    height: 100px;
+    
+    position: fixed;
+    z-index: 99;
+    
+    background-color: #323736;
+}
+
+.heading-item 
+{
+    display: inline-block;
+    float: right;
+    
+    height: 42px;
+    padding: 29px;
+    
+    transition: 0.2s ease-in-out;
+}
+
+    .heading-item > .img-holder
+    {
+        height: 42px;
+        width: 42px;
+        
+        float: left;
+    }
+    
+    .heading-item:first-child
+    {
+        float: left;
+    }
+    
+    .heading-item > span
+    {
+        font-size: 25px;
+        color: #fff;
+        
+        display: inline-block;
+        margin: 8px 4px;
+    }
+    
+    .heading-item:hover
+    {
+        cursor: pointer;
+        transform: scaleX(1.1) scaleY(1.1);
+    }
+    
+.img-holder 
+{
+    position: relative;
+}
+
+img
+{
+     position: relative;
+        
+     max-width: 100%;
+     max-height: 100%;
+     
+     top: 50%;
+     left: 50%;
+        
+     transform: translateY(-50%) translateX(-50%);
+}
+
+.content
+{
+    margin-top: 100px;
+    display: block;
+    
+    font-size: 42px;
+    padding: 16px;
+    
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+    
+.filter-menu
+{
+    position: fixed;
+    top: -132px;
+    
+    z-index: 98;
+    
+    background-color: #323736;
+    padding: 16px;
+    
+    transition: 0.2s ease-in;
+}
+
+    .filter-menu > .filter-btn
+    {
+        display: block;
+    }
+
+.filter-btn
+{
+    padding: 8px;
+    font-size: 25px;
+    
+    color: white;
+    width: 128px;
+    
+    text-align: center;
+    margin: 4px;
+    
+    transition: 0.2s ease-in-out;
+}
+
+    .filter-btn:hover
+    {
+        cursor: pointer;
+        transform: scaleX(1.1) scaleY(1.1);
+        background-color: #464d4c;
+    }
+
+.content 
+{
+    display: block;
+    
+    text-align: justify;
+    top: 100px;
+    padding: 16px;
+    
+    font-size: 32px;
+}
