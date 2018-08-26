@@ -13,7 +13,7 @@ public class Administrator extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) 
     throws ServletException, IOException 
     {
-        request.getRequestDispatcher("/WEB-INF/html/administrator.html")
+        getServletContext().getRequestDispatcher("/WEB-INF/html/administrator.html")
                .forward(request, response);
     } 
 

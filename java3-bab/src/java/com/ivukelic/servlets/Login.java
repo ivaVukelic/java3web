@@ -13,7 +13,7 @@ public class Login extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) 
     throws ServletException, IOException 
     {
-        request.getRequestDispatcher("/WEB-INF/html/login.html")
+        getServletContext().getRequestDispatcher("/WEB-INF/html/login.html")
                .forward(request, response);
     } 
 

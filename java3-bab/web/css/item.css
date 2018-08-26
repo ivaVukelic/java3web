@@ -1,0 +1,63 @@
+.item {
+    padding: 5px;
+    margin: 5px;
+    display: inline-block;
+/*    width: 300px;
+    height: 300px;*/
+    border: dashed 1px #000;
+    transition: 0.3s ease-in;
+    float: left;
+}
+
+.item:hover {
+    
+    border-style: solid;
+    border-radius: 16px;
+    
+}
+
+.img-256 {
+    
+    transition: 0.3s ease-in;
+    
+}
+
+.item:hover .img-256 {
+    
+    border-radius: 8px;
+    
+}
+
+.item-img {
+    display: block;
+    width: 256px;
+    height: 256px;
+    
+}
+
+.cart-icon {
+
+    background-color: #ff5b33;
+    left: 85%;
+    top: -20%;
+    border-radius: 8px;
+    height: 42px;
+    padding: 8px;
+    transition: 0.4s ease-in;
+}
+
+.cart-icon:hover {
+    
+    background-color: #c73713;
+    cursor: pointer;
+}
+
+.item-text {
+    
+    display: block;
+    font-size: 21px;
+    width: 256px;
+    height: 48px;
+    margin-top: 5px;
+    text-align: center;
+}
