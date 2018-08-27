@@ -6,12 +6,16 @@ public class Item {
     private String iconSrc;
     private String name;
     private Double price;
+    private String type;
+    private String id;
 
-    public Item(String imgSrc, String iconSrc, String name, Double price) {
+    public Item(String imgSrc, String iconSrc, String name, Double price, String type, String id) {
         this.imgSrc = imgSrc;
         this.iconSrc = iconSrc;
         this.name = name;
         this.price = price;
+        this.type = type;
+        this.id = id;
     }
 
     public String getImgSrc() {
@@ -45,8 +49,22 @@ public class Item {
     public void setPrice(Double price) {
         this.price = price;
     }
-    
-    
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
     
 }
 

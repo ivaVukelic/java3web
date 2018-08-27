@@ -3,15 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Junkyard/Working-dir/java3-bab/src/java/com/ivukelic/repo/WebShopDb.java</file>
-            <file>file:/D:/Junkyard/Working-dir/java3-bab/web/WEB-INF/html/customer.html</file>
-            <file>file:/D:/Junkyard/Working-dir/java3-bab/web/META-INF/context.xml</file>
+            <file>file:/D:/Junkyard/Working-dir/java3-bab/src/java/com/ivukelic/repo/beans/ItemType.java</file>
+            <file>file:/D:/Junkyard/Working-dir/java3-bab/src/java/com/ivukelic/servlets/Items.java</file>
             <file>file:/D:/Junkyard/Working-dir/java3-bab/web/css/home.css</file>
-            <file>file:/D:/Junkyard/Working-dir/java3-bab/src/java/com/ivukelic/servlets/Login.java</file>
             <file>file:/D:/Junkyard/Working-dir/java3-bab/web/css/item.css</file>
-            <file>file:/D:/Junkyard/Working-dir/java3-bab/src/java/com/ivukelic/servlets/Customer.java</file>
+            <file>file:/D:/Junkyard/Working-dir/java3-bab/src/java/com/ivukelic/repo/beans/Item.java</file>
             <file>file:/D:/Junkyard/Working-dir/java3-bab/src/java/com/ivukelic/servlets/Home.java</file>
-            <file>file:/D:/Junkyard/Working-dir/java3-bab/web/WEB-INF/html/administrator.html</file>
             <file>file:/D:/Junkyard/Working-dir/java3-bab/web/WEB-INF/html/home.html</file>
         </group>
     </open-files>

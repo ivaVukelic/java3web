@@ -1,10 +1,10 @@
-const getItems = () => {
+const getItems = (itemType) => {
     
   fetch(
     '/Grahovica/Items',
     {
         method: 'POST',
-        body: '',
+        body: JSON.stringify({type:itemType}),
         headers : {
             'Content-Type' : 'application/json; charset=utf-8'
         }
@@ -25,6 +25,9 @@ const getItems = () => {
                 let cartIcon = document.createElement('img');
                 cartIcon.classList.add('cart-icon');
                 cartIcon.src = temp.iconSrc;
+                cartIcon.addEventListener('click', () => {
+                    alert(temp.id);
+                });
                 
                 itemImg.appendChild(img256);
                 itemImg.appendChild(cartIcon);
@@ -48,9 +51,16 @@ const getItems = () => {
                 fragment.appendChild(item);
                 
             }
-            
+            document.querySelector('.content').innerHTML = '';
             document.querySelector('.content').appendChild(fragment);
       });
   });  
     
 };
+
+(() => {
+    window.addEventListener('load', () => {
+//        getItems('All');
+    });
+})();
+
