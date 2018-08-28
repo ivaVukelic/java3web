@@ -26,7 +26,7 @@ const getItems = (itemType) => {
                 cartIcon.classList.add('cart-icon');
                 cartIcon.src = temp.iconSrc;
                 cartIcon.addEventListener('click', () => {
-                    alert(temp.id);
+                    addToCart(temp);
                 });
                 
                 itemImg.appendChild(img256);
@@ -54,13 +54,119 @@ const getItems = (itemType) => {
             document.querySelector('.content').innerHTML = '';
             document.querySelector('.content').appendChild(fragment);
       });
-  });  
+  });   
     
+};
+
+const checkIfItemExists = (id) => {
+    
+    let ids = document.querySelectorAll('.ih-id');
+    
+    for (let i = 0; i < ids.length; i++) {
+        
+        if (ids[i].value === id) {
+            return true;
+        }
+        
+    }
+    
+    return false;
+    
+};
+
+const addToCart = (item) => {
+    
+    if (checkIfItemExists(item.id))
+    {
+        return;
+    }
+    
+    let cartItems = document.querySelector('.cart-items');
+    let fragment = document.createDocumentFragment();
+    
+    let cartItem = document.createElement('div');
+    cartItem.classList.add('cart-item');
+    
+    let cartImg = document.createElement('div');
+    cartImg.classList.add('cart-img');
+    
+    let image = document.createElement('img');
+    image.src = item.imgSrc;
+    
+    let itemTitle = document.createElement('div');
+    itemTitle.classList.add('item-title');
+    itemTitle.innerText = item.name;
+    
+    let iksich = document.createElement('div');
+    iksich.classList.add('x-ich');
+    iksich.innerText = "X";
+    
+    iksich.addEventListener('click', () => {
+        cartItem.remove();
+    });
+    
+    let itemOptions = document.createElement('div');
+    itemOptions.classList.add('item-options');
+    
+    let ihPrice = document.createElement('input');
+    ihPrice.type = 'hidden';
+    ihPrice.classList.add('ih-price');
+    ihPrice.value = item.price;
+    
+    let ihId = document.createElement('input');
+    ihId.type = 'hidden';
+    ihId.classList.add('ih-id');
+    ihId.value = item.id;
+    
+    let amount = document.createElement('input');
+    amount.classList.add('item-amount');
+    amount.Type = "number";
+    amount.value = 1;
+    
+    let itemPrice = document.createElement('div');
+    itemPrice.classList.add('item-price');
+    itemPrice.innerText = `$${item.price}`;
+    
+    itemOptions.appendChild(amount);
+    itemOptions.appendChild(itemPrice);
+    
+    cartImg.appendChild(image);
+    
+    cartItem.appendChild(ihId);
+    cartItem.appendChild(ihPrice);
+    cartItem.appendChild(cartImg);
+    cartItem.appendChild(itemTitle);
+    cartItem.appendChild(iksich);
+    cartItem.appendChild(itemOptions);
+    
+    fragment.appendChild(cartItem);
+    cartItems.appendChild(fragment);
+};
+
+const updateTotal = () => {
+    
+    let text = document.querySelector('.cart-menu > .item-title');
+    let values = document.querySelectorAll('.ih-amount');
+    let amounts = document.querySelectorAll('.item-amount');
+    let totalValue = 0;
+    
+    console.log(values);
+    console.log(amounts);
+    
+    for (let i = 0; i < values.length; i++) {
+        
+        totalValue += Math.floor(amounts[i].value * Number(values[i].value));
+        
+    }
+    
+    text.innerText = `Total: $${totalValue}`;
+  
 };
 
 (() => {
     window.addEventListener('load', () => {
-//        getItems('All');
+        getItems('All');
     });
+    
 })();
 

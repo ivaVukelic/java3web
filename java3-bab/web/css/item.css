@@ -64,7 +64,7 @@
 
 
 
-.item-img {
+.cart-img {
     
     width: 80px;
     height: 80px;
@@ -73,7 +73,7 @@
     
 }
 
-    .item-img > img {
+    .cart-img > img {
         
         border-radius: 8px;
         
@@ -84,6 +84,15 @@
     border: 2px dashed #000;
     padding: 16px;
     display: inline-block;
+    position: fixed;
+    right: -900px;
+    top: 100px;
+    background-color: #fff;
+    transition: 0.3s ease-in;
+    
+    overflow-y: scroll;
+    height: 512px;
+    z-index: 98;
     
 }
 
@@ -133,7 +142,7 @@
     
     display: inline-block;
     font-size: 24px;
-    
+    margin-left: 16px;
 }
 
 .item-amount {
@@ -165,8 +174,3 @@
         
     }
     
-.item-title {
-
-    
-
-}
