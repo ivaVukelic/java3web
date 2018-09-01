@@ -3,15 +3,13 @@ package com.ivukelic.repo.beans;
 public class Item {
     
     private String imgSrc;
-    private String iconSrc;
     private String name;
     private Double price;
     private String type;
     private String id;
 
-    public Item(String imgSrc, String iconSrc, String name, Double price, String type, String id) {
+    public Item(String imgSrc, String name, Double price, String type, String id) {
         this.imgSrc = imgSrc;
-        this.iconSrc = iconSrc;
         this.name = name;
         this.price = price;
         this.type = type;
@@ -26,13 +24,6 @@ public class Item {
         this.imgSrc = imgSrc;
     }
 
-    public String getIconSrc() {
-        return iconSrc;
-    }
-
-    public void setIconSrc(String iconSrc) {
-        this.iconSrc = iconSrc;
-    }
 
     public String getName() {
         return name;

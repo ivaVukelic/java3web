@@ -32,6 +32,10 @@
         <servlet-name>Items</servlet-name>
         <servlet-class>com.ivukelic.servlets.Items</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CartItems</servlet-name>
+        <servlet-class>com.ivukelic.servlets.CartItems</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
         <url-pattern/>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>Items</servlet-name>
         <url-pattern>/Items</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartItems</servlet-name>
+        <url-pattern>/CartItems</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

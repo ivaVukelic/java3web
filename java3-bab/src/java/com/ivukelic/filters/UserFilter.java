@@ -5,6 +5,7 @@
  */
 package com.ivukelic.filters;
 
+import com.ivukelic.repo.beans.User;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
@@ -31,16 +32,30 @@ public class UserFilter implements Filter
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
     throws IOException, ServletException {
         
-        if (debug) {
-            log("UserFilter:doFilter()");
-        }
-        
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         
-        if (req.getSession().getAttribute("UserLogin") == null)
+        User user = (User) req.getSession().getAttribute("user");
+        
+        if (user == null)
         {
             res.sendRedirect("/Grahovica/Login");
+        }
+        
+        switch (req.getServletPath())
+        {
+            case "/Signed/Administrator":
+                if (user.getUserType() != 0)
+                {
+                    res.sendRedirect("/Grahovica/Login");
+                }
+                break;
+            case "/Signed/Customer":
+                if (user.getUserType() != 1)
+                {
+                    res.sendRedirect("/Grahovica/Login");
+                }
+                break;
         }
         
         Throwable problem = null;

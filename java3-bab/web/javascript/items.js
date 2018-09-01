@@ -24,7 +24,7 @@ const getItems = (itemType) => {
                 img256.src = temp.imgSrc;
                 let cartIcon = document.createElement('img');
                 cartIcon.classList.add('cart-icon');
-                cartIcon.src = temp.iconSrc;
+                cartIcon.src = "/Grahovica/images/icons/cart_64.png";
                 cartIcon.addEventListener('click', () => {
                     addToCart(temp);
                 });
@@ -74,7 +74,7 @@ const checkIfItemExists = (id) => {
     
 };
 
-const addToCart = (item) => {
+const addToCart = (item, amountVal = null) => {
     
     if (checkIfItemExists(item.id))
     {
@@ -121,7 +121,7 @@ const addToCart = (item) => {
     let amount = document.createElement('input');
     amount.classList.add('item-amount');
     amount.Type = "number";
-    amount.value = 1;
+    amount.value = amountVal === null ? 1 : amountVal;
     
     let itemPrice = document.createElement('div');
     itemPrice.classList.add('item-price');
@@ -163,10 +163,58 @@ const updateTotal = () => {
   
 };
 
+
+const saveCart = () => {
+    
+    let items = [];
+    let cartItems = document.querySelectorAll('.cart-item');
+
+    let id;
+    let amount;
+
+    for (let i = 0; i < cartItems.length; i++) {
+        id = cartItems[i].querySelector('.ih-id').value;
+        amount = cartItems[i].querySelector('.item-amount').value;
+        items.push({id:id, amount:amount});
+    }
+
+    fetch(
+    '/Grahovica/CartItems',
+    {
+        method: 'POST',
+        body: JSON.stringify({items:items}),
+        headers : {
+            'Content-Type' : 'application/json; charset=utf-8'
+        }
+    }).then((response) =>  response.json().then((response) => console.log(response)));
+    
+};
+
+const loadCart = () => {
+    
+    let cartItems = document.querySelector('.cart-items');
+    
+    fetch(
+    '/Grahovica/CartItems',
+    {
+        method: 'GET',
+        headers : {
+            'Content-Type' : 'application/json; charset=utf-8'
+        }
+    }).then((response) =>  response.json().then((response) => {
+        
+        //for ()
+        
+    }));
+    
+};
+
 (() => {
     window.addEventListener('load', () => {
         getItems('All');
+        loadCart(); // not finished.
     });
     
+    window.addEventListener('beforeunload', () => saveCart());
 })();
 

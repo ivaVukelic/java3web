@@ -17,8 +17,7 @@
         
         btnLogin.addEventListener('click', () => {
             fetch(
-                '/Grahovica/Authenticator',
-                {
+                '/Grahovica/Authenticator', {
                     method: 'POST',
                     body: JSON.stringify({
                         email: inEmail.value,
@@ -29,12 +28,11 @@
                     }
                 }
             ).then((req) => {
-                return req.json();
-            }).then((req) => {
-                if (req.isGud === true)
-                {
-                    window.location.href = `/Grahovica/Signed/${req.path}`;
-                }
+                req.json().then((req) => {
+                    if (req === false) {
+                        window.location.href = `/Grahovica/Authenticator`;
+                    }
+                });
             });
         });
         

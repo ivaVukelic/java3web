@@ -1,14 +1,11 @@
-
 package com.ivukelic.repo.beans;
 
-
-public class UserLogin 
-{
+public class UserLogin {
+    
     private String email;
     private String password;
-    
-    public UserLogin(String email, String password)
-    {
+
+    public UserLogin(String email, String password) {
         this.email = email;
         this.password = password;
     }
@@ -29,8 +26,4 @@ public class UserLogin
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return String.format("email:%s password:%s", email, password);
-    }
 }
